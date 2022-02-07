@@ -1,4 +1,4 @@
-package hr.algebra.pokedex
+package hr.algebra.pokedex.adapter
 
 import android.content.ContentUris
 import android.content.ContentValues
@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
+import hr.algebra.pokedex.POKEDEX_PROVIDER_URI
+import hr.algebra.pokedex.R
 import hr.algebra.pokedex.model.Item
 import jp.wasabeef.picasso.transformations.RoundedCornersTransformation
 import java.io.File

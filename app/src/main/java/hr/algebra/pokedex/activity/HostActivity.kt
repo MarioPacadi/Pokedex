@@ -1,13 +1,15 @@
-package hr.algebra.pokedex
+package hr.algebra.pokedex.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import hr.algebra.pokedex.R
 import hr.algebra.pokedex.databinding.ActivityHostBinding
 
 class HostActivity : AppCompatActivity() {
@@ -23,15 +25,16 @@ class HostActivity : AppCompatActivity() {
 
         initHamburgerMenu()
         initNavigation()
+        Log.w("HostActivity","HostActivity created")
     }
 
     private fun initHamburgerMenu() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(hr.algebra.pokedex.R.drawable.ic_menu)
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
     }
 
     private fun initNavigation() {
-        var navController = Navigation.findNavController(this, hr.algebra.pokedex.R.id.navHostFragment)
+        var navController = Navigation.findNavController(this, R.id.navHostFragment)
         NavigationUI.setupWithNavController(binding.navigationView, navController)
     }
 
@@ -41,7 +44,7 @@ class HostActivity : AppCompatActivity() {
                 toggleDrawer()
                 return true
             }
-            hr.algebra.pokedex.R.id.menuExit -> {
+            R.id.menuExit -> {
                 exitApp()
                 return true
             }
@@ -51,11 +54,11 @@ class HostActivity : AppCompatActivity() {
 
     private fun exitApp() {
         AlertDialog.Builder(this).apply {
-            setTitle(hr.algebra.pokedex.R.string.exit)
-            setMessage(getString(hr.algebra.pokedex.R.string.really))
-            setIcon(hr.algebra.pokedex.R.drawable.exit)
+            setTitle(R.string.exit)
+            setMessage(getString(R.string.really))
+            setIcon(R.drawable.exit)
             setCancelable(true)
-            setNegativeButton(getString(hr.algebra.pokedex.R.string.cancel), null)
+            setNegativeButton(getString(R.string.cancel), null)
             setPositiveButton("Ok") { _, _ -> finish()}
             show()
         }
@@ -70,7 +73,7 @@ class HostActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(hr.algebra.pokedex.R.menu.host_menu, menu)
+        menuInflater.inflate(R.menu.host_menu, menu)
         return true
     }
 }

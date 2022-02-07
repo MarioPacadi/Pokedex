@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pokedex">
-        <activity android:name=".ItemPagerActivity"></activity>
+        <activity android:name=".activity.PokemonPagerActivity" />
 
         <provider
             android:name=".PokedexProvider"
@@ -26,16 +26,16 @@
             android:exported="false" />
 
         <service
-            android:name=".NasaService"
+            android:name=".PokedexService"
             android:enabled="true"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
-            android:name="hr.algebra.pokedex.HostActivity"
+            android:name="hr.algebra.pokedex.activity.HostActivity"
             android:exported="true" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".activity.SplashScreenActivity"
             android:exported="true"
             android:noHistory="true"
             android:screenOrientation="portrait"

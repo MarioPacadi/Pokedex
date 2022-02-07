@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/menuItems"
-        android:name="hr.algebra.pokedex.ItemsFragment"
+        android:name="hr.algebra.pokedex.fragment.ItemsFragment"
         android:label="@string/items"
         tools:layout="@layout/fragment_items"/>
 
     <fragment
         android:id="@+id/menuAbout"
-        android:name="hr.algebra.pokedex.AboutFragment"
+        android:name="hr.algebra.pokedex.fragment.AboutFragment"
         android:label="@string/about"
         tools:layout="@layout/fragment_about"/>
 

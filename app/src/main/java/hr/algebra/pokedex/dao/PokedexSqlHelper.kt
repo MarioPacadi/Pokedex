@@ -5,19 +5,21 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import hr.algebra.pokedex.model.Item
+import hr.algebra.pokedex.model.Pokemon
 
-private const val DB_NAME = "items.db"
+private const val DB_NAME = "pokedex.db"
 private const val DB_VERSION = 1
-private const val TABLE_NAME = "Items"
+private const val TABLE_NAME = "Pokemon"
 
 private val CREATE = "create table $TABLE_NAME(" +
-        "${Item::_id.name} integer primary key autoincrement, " +
-        "${Item::title.name} text not null, " +
-        "${Item::explanation.name} text not null, " +
-        "${Item::picturePath.name} text not null, " +
-        "${Item::date.name} text not null, " +
-        "${Item::read.name} integer not null" +
+        "${Pokemon::_id.name} integer primary key autoincrement, " +
+        "${Pokemon::name.name} text not null, " +
+        "${Pokemon::weight.name} text not null, " +
+        "${Pokemon::height.name} text not null, " +
+        "${Pokemon::spritePath.name} text not null, " +
+        "${Pokemon::abilities.name} text not null, " +
+        "${Pokemon::types.name} text not null," +
+        "${Pokemon::moves.name} text not null" +
         ")"
 
 private const val DROP = "drop table $TABLE_NAME"
@@ -55,6 +57,4 @@ class PokedexSqlHelper(context: Context?)
                 null,
                 null,
                 sortOrder)
-
-
 }

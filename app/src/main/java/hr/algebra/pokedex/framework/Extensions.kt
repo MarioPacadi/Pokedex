@@ -14,6 +14,7 @@ import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
 import hr.algebra.pokedex.POKEDEX_PROVIDER_URI
 import hr.algebra.pokedex.model.Item
+import hr.algebra.pokedex.model.Pokemon
 
 fun View.startAnimation(animationId: Int)
         = startAnimation(AnimationUtils.loadAnimation(context, animationId))
@@ -79,4 +80,28 @@ fun Context.fetchItems() : MutableList<Item> {
         ))
     }
     return items
+}
+
+fun Context.fetchPokedex() : MutableList<Pokemon> {
+    val pokemons = mutableListOf<Pokemon>()
+    val cursor = contentResolver?.query(POKEDEX_PROVIDER_URI,
+        null,
+        null,
+        null,
+        null)
+    while (cursor != null && cursor.moveToNext()) {
+        pokemons.add(
+            Pokemon(
+            cursor.getLong(cursor.getColumnIndexOrThrow(Pokemon::_id.name)),
+            cursor.getString(cursor.getColumnIndexOrThrow(Pokemon::name.name)),
+            cursor.getDouble(cursor.getColumnIndexOrThrow(Pokemon::weight.name)),
+            cursor.getDouble(cursor.getColumnIndexOrThrow(Pokemon::height.name)),
+            cursor.getString(cursor.getColumnIndexOrThrow(Pokemon::spritePath.name)),
+            cursor.getString(cursor.getColumnIndexOrThrow(Pokemon::types.name)),
+            cursor.getString(cursor.getColumnIndexOrThrow(Pokemon::abilities.name)),
+            cursor.getString(cursor.getColumnIndexOrThrow(Pokemon::moves.name)),
+            )
+        )
+    }
+    return pokemons
 }

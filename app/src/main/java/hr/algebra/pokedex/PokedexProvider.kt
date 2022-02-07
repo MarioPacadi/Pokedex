@@ -7,8 +7,9 @@ import android.content.UriMatcher
 import android.database.Cursor
 import android.net.Uri
 import hr.algebra.pokedex.dao.PokedexRepository
-import hr.algebra.pokedex.dao.getNasaRepository
+import hr.algebra.pokedex.dao.getPokemonRepository
 import hr.algebra.pokedex.model.Item
+import hr.algebra.pokedex.model.Pokemon
 import java.lang.IllegalArgumentException
 
 private const val AUTHORITY = "hr.algebra.pokedex.api.provider"
@@ -16,7 +17,7 @@ private const val PATH = "items"
 private const val ITEMS = 10
 private const val ITEM_ID = 20
 
-val POKEDEX_PROVIDER_URI = Uri.parse("content://$AUTHORITY/$PATH")
+val POKEDEX_PROVIDER_URI = Uri.parse("content://$AUTHORITY/$PATH")!!
 
 private val URI_MATCHER = with(UriMatcher(UriMatcher.NO_MATCH)) {
     addURI(AUTHORITY, PATH, ITEMS)
@@ -33,7 +34,7 @@ class PokedexProvider : ContentProvider() {
             ITEMS -> return pokedexRepository.delete(selection, selectionArgs)
             ITEM_ID -> {
                 uri.lastPathSegment?.let {
-                    return pokedexRepository.delete("${Item::_id.name}=?", arrayOf(it))
+                    return pokedexRepository.delete("${Pokemon::_id.name}=?", arrayOf(it))
                 }
             }
         }
@@ -53,7 +54,7 @@ class PokedexProvider : ContentProvider() {
     }
 
     override fun onCreate(): Boolean {
-        pokedexRepository = getNasaRepository(context)
+        pokedexRepository = getPokemonRepository(context)
         return true
     }
 
@@ -70,7 +71,7 @@ class PokedexProvider : ContentProvider() {
             ITEMS -> return pokedexRepository.update(values, selection, selectionArgs)
             ITEM_ID -> {
                 uri.lastPathSegment?.let {
-                    return pokedexRepository.update(values, "${Item::_id.name}=?", arrayOf(it))
+                    return pokedexRepository.update(values, "${Pokemon::_id.name}=?", arrayOf(it))
                 }
             }
         }

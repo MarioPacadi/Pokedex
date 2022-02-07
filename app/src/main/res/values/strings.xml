@@ -5,7 +5,7 @@
     <string name="items">Items</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
-    <string name="really">Really exit app?</string>
+    <string name="really">Would you really like to exit app?</string>
     <string name="cancel">Cancel</string>
     <string name="application_made_by_algebra_students">Application made by Algebra student</string>
     <string name="delete">Delete</string>

@@ -12,8 +12,8 @@ import java.nio.file.Paths
 fun downloadImageAndStore(context: Context, url: String, filename: String): String? {
 
     // Nebula
-    //https://apod.nasa.gov/apod/image/0707/northpoleclouds_AIMData_lg.jpg
-    val ext = url.substring(url.lastIndexOf(".")) // .jpg
+    //"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+    val ext = url.substring(url.lastIndexOf(".")) // .png
     val file: File = createFile(context, filename, ext)
 
     try {
@@ -21,7 +21,7 @@ fun downloadImageAndStore(context: Context, url: String, filename: String): Stri
         Files.copy(con.inputStream, Paths.get(file.toURI()))
         return file.absolutePath
     } catch (e: Exception) {
-        Log.e("DOWNLOAD IMAGE", e.message, e)
+        Log.e("DOWNLOAD IMAGE", e.message+" $url - $ext", e)
     }
 
     return null
@@ -35,4 +35,8 @@ fun createFile(context: Context, filename: String, ext: String): File {
         file.delete()
     }
     return file
+}
+
+fun getImageUrl(index : String): String {
+    return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$index.png"
 }
