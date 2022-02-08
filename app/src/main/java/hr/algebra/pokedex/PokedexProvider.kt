@@ -8,7 +8,6 @@ import android.database.Cursor
 import android.net.Uri
 import hr.algebra.pokedex.dao.PokedexRepository
 import hr.algebra.pokedex.dao.getPokemonRepository
-import hr.algebra.pokedex.model.Item
 import hr.algebra.pokedex.model.Pokemon
 import java.lang.IllegalArgumentException
 

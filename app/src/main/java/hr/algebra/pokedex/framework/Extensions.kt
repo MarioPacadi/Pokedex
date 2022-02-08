@@ -14,7 +14,6 @@ import android.view.animation.AnimationUtils
 import androidx.core.content.getSystemService
 import androidx.preference.PreferenceManager
 import hr.algebra.pokedex.POKEDEX_PROVIDER_URI
-import hr.algebra.pokedex.model.Item
 import hr.algebra.pokedex.model.Pokemon
 
 fun View.startAnimation(animationId: Int)
