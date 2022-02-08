@@ -14,9 +14,9 @@ data class PokemonDetailsResponse(
     val name: String,
 
     @SerializedName("height")
-    val height : Double,
+    val height : Int,
     @SerializedName("weight")
-    val weight : Double,
+    val weight : Int,
 
     @SerializedName("sprites")
     val sprites : Sprite,
@@ -31,7 +31,7 @@ data class PokemonDetailsResponse(
         val sb = StringBuilder()
         abilities.forEach{
             sb.append(it.ability.name)
-            sb.append(",")
+            sb.append(" ")
         }
 
         return sb.toString()
@@ -41,9 +41,8 @@ data class PokemonDetailsResponse(
         val sb = StringBuilder()
         types.forEach{
             sb.append(it.type.name)
-            sb.append(",")
+            sb.append(" ")
         }
-
         return sb.toString()
     }
 
@@ -51,7 +50,7 @@ data class PokemonDetailsResponse(
         val sb = StringBuilder()
         moves.forEach{
             sb.append(it.move.name)
-            sb.append(",")
+            sb.append(" ")
         }
 
         return sb.toString()

@@ -13,13 +13,15 @@ private const val TABLE_NAME = "Pokemon"
 
 private val CREATE = "create table $TABLE_NAME(" +
         "${Pokemon::_id.name} integer primary key autoincrement, " +
+        "${Pokemon::pokedexId.name} integer not null," +
         "${Pokemon::name.name} text not null, " +
-        "${Pokemon::weight.name} text not null, " +
-        "${Pokemon::height.name} text not null, " +
+        "${Pokemon::weight.name} integer not null, " +
+        "${Pokemon::height.name} integer not null, " +
         "${Pokemon::spritePath.name} text not null, " +
         "${Pokemon::abilities.name} text not null, " +
         "${Pokemon::types.name} text not null," +
-        "${Pokemon::moves.name} text not null" +
+        "${Pokemon::moves.name} text not null," +
+        "${Pokemon::caught.name} integer not null" +
         ")"
 
 private const val DROP = "drop table $TABLE_NAME"

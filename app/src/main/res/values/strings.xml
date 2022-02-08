@@ -10,7 +10,10 @@
     <string name="application_made_by_algebra_students">Application made by Algebra student</string>
     <string name="delete">Delete</string>
     <string name="sure">Are you sure to delete</string>
-    <string name="date">Date</string>
-    <string name="title">Title</string>
-    <string name="explanation">Explanation</string>
+    <string name="type">Types</string>
+    <string name="pokemon_name">Name</string>
+    <string name="abilities">Abilities</string>
+    <string name="map">Map</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
 </resources>

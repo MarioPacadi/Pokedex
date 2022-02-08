@@ -13,8 +13,8 @@ import hr.algebra.pokedex.model.Pokemon
 import java.lang.IllegalArgumentException
 
 private const val AUTHORITY = "hr.algebra.pokedex.api.provider"
-private const val PATH = "items"
-private const val ITEMS = 10
+private const val PATH = "pokemons"
+const val ITEMS = 12
 private const val ITEM_ID = 20
 
 val POKEDEX_PROVIDER_URI = Uri.parse("content://$AUTHORITY/$PATH")!!

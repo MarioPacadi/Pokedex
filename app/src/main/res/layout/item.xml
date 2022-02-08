@@ -14,22 +14,37 @@
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/ivItem"
+            android:id="@+id/ivPokemon"
             android:layout_width="@dimen/ivSize"
             android:layout_height="@dimen/ivSize"
             tools:src="@drawable/poke_logo" />
 
-        <TextView
-            android:id="@+id/tvItem"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/ivSize"
-            android:textColor="@color/white"
-            android:gravity="center_vertical"
-            android:textSize="@dimen/textSizeItems"
-            android:layout_marginLeft="@dimen/marginLeftItems"
-            tools:text="Picture of the day" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/tvItem"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginLeft="@dimen/marginLeftItems"
+                android:gravity="center_vertical"
+                android:textColor="@color/white"
+                android:textSize="@dimen/textSizeItems"
+                tools:text="Picture of the day" />
 
+            <TextView
+                android:id="@+id/tvPokedexNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeftItems"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                tools:text="#1" />
+
+        </LinearLayout>
+        
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -11,7 +11,7 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/ivItem"
+            android:id="@+id/ivPokemon"
             android:layout_width="match_parent"
             android:layout_height="@dimen/ivHeight"
             tools:src="@drawable/poke_unobtainable"/>
@@ -24,49 +24,99 @@
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="@string/weight"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="@string/pokemon_name"/>
+
+            <TextView
+                android:id="@+id/lbHeight"
+                android:gravity="left"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@android:color/holo_red_dark"
+                tools:text="@string/height"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="@string/weight"/>
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_weight="6"
+                android:layout_height="wrap_content"
+                android:text="@string/pokemon_name"/>
+
+            <TextView
+                android:id="@+id/tvHeight"
+                android:gravity="left"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                tools:text="@string/height" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/marginTopDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="5"
                 android:textStyle="bold"
                 android:textColor="@android:color/holo_red_dark"
-                android:text="@string/date"/>
+                android:text="@string/type"/>
 
             <ImageView
-                android:id="@+id/ivRead"
+                android:id="@+id/ivCaught"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                tools:src="@drawable/red_flag"/>
+                tools:src="@drawable/caught_red"/>
 
         </LinearLayout>
 
 
         <TextView
-            android:id="@+id/tvDate"
+            android:id="@+id/tvType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="yyyy-MM-dd" />
+            tools:text="@string/type" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textColor="@android:color/holo_red_dark"
-            android:text="@string/title"/>
+            android:text="@string/abilities"/>
 
         <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="@tools:sample/lorem" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:textColor="@android:color/holo_red_dark"
-            android:text="@string/explanation"/>
-
-        <TextView
-            android:id="@+id/tvExplanation"
+            android:id="@+id/tvAbilities"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             tools:text="@tools:sample/lorem/random" />

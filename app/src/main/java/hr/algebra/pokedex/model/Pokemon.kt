@@ -7,14 +7,21 @@ import java.util.ArrayList
 data class Pokemon  (
     var _id: Long?,
 
+    var pokedexId : Int,
     var name: String,
 
-    var height: Double,
-    var weight: Double,
+    var height: Int,
+    var weight: Int,
 
     var spritePath: String,
+    var caught : Boolean,
 
     val types: String,
     val moves: String,
     val abilities : String
-)
+) : Comparable<Pokemon>
+{
+    override fun compareTo(other: Pokemon): Int {
+        return pokedexId.compareTo(other.pokedexId)
+    }
+}

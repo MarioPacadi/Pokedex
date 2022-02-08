@@ -25,8 +25,11 @@ class PokemonAdapter(private val context: Context, private val pokemons: Mutable
     : RecyclerView.Adapter<PokemonAdapter.ViewHolder>(){
     class ViewHolder(pokemonView: View) : RecyclerView.ViewHolder(pokemonView){
 
-        private val ivItem = pokemonView.findViewById<ImageView>(R.id.ivItem)
+        private val ivItem = pokemonView.findViewById<ImageView>(R.id.ivPokemon)
         private val tvItem = pokemonView.findViewById<TextView>(R.id.tvItem)
+        private val tvOrder = pokemonView.findViewById<TextView>(R.id.tvPokedexNumber)
+
+        @SuppressLint("SetTextI18n")
         fun bind(pokemon: Pokemon) {
             Picasso.get()
                 .load(File(pokemon.spritePath))
@@ -34,8 +37,8 @@ class PokemonAdapter(private val context: Context, private val pokemons: Mutable
                 .transform(RoundedCornersTransformation(50, 5))
                 .into(ivItem)
             tvItem.text = pokemon.name
+            tvOrder.text="#${pokemon.pokedexId}"
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)

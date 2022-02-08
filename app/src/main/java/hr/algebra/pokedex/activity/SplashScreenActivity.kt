@@ -10,7 +10,7 @@ import hr.algebra.pokedex.databinding.ActivitySplashScreenBinding
 import hr.algebra.pokedex.framework.*
 import kotlinx.coroutines.DelicateCoroutinesApi
 
-private const val DELAY = 3000L
+const val DELAY = 3000L
 const val DATA_IMPORTED = "hr.algebra.pokedex.data_imported"
 @SuppressLint("CustomSplashScreen")
 @DelicateCoroutinesApi
@@ -34,7 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     private fun redirect() {
         if (getBooleanPreference(DATA_IMPORTED)) {
-            //callDelayed(DELAY) {startActivity<HostActivity>()}
+            callDelayed(DELAY) {startActivity<HostActivity>()}
         } else {
             if (isOnline()) {
                 Intent(this, PokedexService::class.java).apply {

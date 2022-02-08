@@ -11,6 +11,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
 import hr.algebra.pokedex.R
 import hr.algebra.pokedex.databinding.ActivityHostBinding
+import kotlin.system.exitProcess
 
 class HostActivity : AppCompatActivity() {
 
@@ -34,7 +35,7 @@ class HostActivity : AppCompatActivity() {
     }
 
     private fun initNavigation() {
-        var navController = Navigation.findNavController(this, R.id.navHostFragment)
+        val navController = Navigation.findNavController(this, R.id.navHostFragment)
         NavigationUI.setupWithNavController(binding.navigationView, navController)
     }
 
@@ -62,6 +63,7 @@ class HostActivity : AppCompatActivity() {
             setPositiveButton("Ok") { _, _ -> finish()}
             show()
         }
+
     }
 
     private fun toggleDrawer() {

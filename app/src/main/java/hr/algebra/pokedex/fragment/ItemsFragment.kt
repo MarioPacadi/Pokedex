@@ -16,17 +16,14 @@ class ItemsFragment : Fragment() {
 
     private lateinit var binding: FragmentItemsBinding
     private lateinit var pokemons: MutableList<Pokemon>
-    //private lateinit var items: MutableList<Item>
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentItemsBinding.inflate(inflater, container, false)
-        //items = requireContext().fetchItems()
         pokemons=requireContext().fetchPokedex()
-        Log.d("Pokemons","${pokemons.toString()}")
+        Log.d("Pokemons","$pokemons")
         return binding.root
     }
 
