@@ -9,9 +9,5 @@
         android:id="@+id/menuAbout"
         android:title="@string/about"
         android:icon="@drawable/about"/>
-    <item
-        android:id="@+id/menuMap"
-        android:title="@string/map"
-        android:icon="@drawable/map"/>
 
 </menu>

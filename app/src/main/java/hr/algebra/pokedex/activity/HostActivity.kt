@@ -9,8 +9,10 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.navigation.Navigation
 import androidx.navigation.ui.NavigationUI
+import com.google.android.gms.maps.SupportMapFragment
 import hr.algebra.pokedex.R
 import hr.algebra.pokedex.databinding.ActivityHostBinding
+import hr.algebra.pokedex.framework.startActivity
 import kotlin.system.exitProcess
 
 class HostActivity : AppCompatActivity() {
@@ -43,6 +45,10 @@ class HostActivity : AppCompatActivity() {
         when(item.itemId) {
             android.R.id.home -> {
                 toggleDrawer()
+                return true
+            }
+            R.id.menuMap -> {
+                startActivity<MapsActivity>()
                 return true
             }
             R.id.menuExit -> {
