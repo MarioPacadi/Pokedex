@@ -33,7 +33,7 @@ class PokemonPagerAdapter(private val context: Context, private val pokemon: Mut
         private val lbHeight = itemView.findViewById<TextView>(R.id.lbHeight)
         private val tvAbilities = itemView.findViewById<TextView>(R.id.tvAbilities)
         private val tvTypes = itemView.findViewById<TextView>(R.id.tvType)
-        
+
         @SuppressLint("SetTextI18n")
         fun bind(pokemon : Pokemon) {
             Picasso.get()
@@ -43,13 +43,12 @@ class PokemonPagerAdapter(private val context: Context, private val pokemon: Mut
                 .into(ivPokemon)
             tvName.text = pokemon.name
             tvWeight.text="${pokemon.weight} kg"
-            tvHeight.text="${pokemon.height} meters"
+            tvHeight.text="${pokemon.height} dm"
             tvAbilities.text = pokemon.abilities
             tvTypes.text = pokemon.types
             ivCaught.setImageResource(if (pokemon.caught) R.drawable.caught_green else R.drawable.caught_red)
             lbHeight.text= "Height"
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)

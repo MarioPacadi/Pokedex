@@ -98,11 +98,19 @@ class PokedexFetcher(private val context: Context) {
         GlobalScope.launch {
             //Log.d("PokemonInfo",details.toString())
 
-            val picturePath = downloadImageAndStore(
+            var picturePath = downloadImageAndStore(
                 context,
                 getImageUrl(details.pokemon_id),
                 details.name.replace(" ", "_")
             )
+
+            if (picturePath.isNullOrEmpty()){
+                picturePath = downloadImageAndStore(
+                    context,
+                    details.sprites.frontDefault.toString(),
+                    details.name.replace(" ", "_")
+                )
+            }
 
             val values = ContentValues().apply {
                 put(Pokemon::pokedexId.name, details.pokemon_id) //sort order
