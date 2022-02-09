@@ -15,9 +15,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pokedex">
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key"/>
 
         <activity android:name=".activity.PokemonPagerActivity" />
 
@@ -42,6 +39,9 @@
             android:name="hr.algebra.pokedex.activity.HostActivity"
             android:exported="true" />
         <activity android:name=".activity.MapsActivity"/>
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key"/>
         <activity
             android:name=".activity.SplashScreenActivity"
             android:exported="true"

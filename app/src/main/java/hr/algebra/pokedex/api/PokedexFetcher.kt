@@ -54,10 +54,6 @@ class PokedexFetcher(private val context: Context) {
             }
         })
 
-        callDelayed(DELAY) {
-            context.setBooleanPreference(DATA_IMPORTED, true)
-            context.sendBroadcast<PokedexReceiver>()
-        }
     }
 
     private fun fetchPokemon(id : String) {
@@ -88,8 +84,10 @@ class PokedexFetcher(private val context: Context) {
         Log.w("PokedexFetcher", "Fetched all pokemon")
         Log.w("PokedexFetcher", "Inserted all values to context")
 
-        context.setBooleanPreference(DATA_IMPORTED, true)
-        context.sendBroadcast<PokedexReceiver>()
+        callDelayed(DELAY) {
+            context.setBooleanPreference(DATA_IMPORTED, true)
+            context.sendBroadcast<PokedexReceiver>()
+        }
         Log.d("PokedexFetcher", "Pokemons content values is empty: ${pokemons.isEmpty()}")
     }
 

@@ -9,11 +9,7 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 const val POKEAPI_URL: String = "https://pokeapi.co/api/v2/"
-const val API_URL = "https://api.nasa.gov/planetary/"
 interface PokedexApi {
-    @GET("apod?api_key=DEMO_KEY&count=10")
-    fun fetchItems() : Call<List<PokedexItem>>
-
     @GET("pokemon/{id}")
     fun getPokemon(@Path("id") id: Int): Call<PokemonDetailsResponse>
 
